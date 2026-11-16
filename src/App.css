@@ -1,0 +1,284 @@
+/* O asterisco (*) seleciona TODOS os elementos da página para zerar espaços padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  /* Faz com que padding e bordas não aumentem o tamanho final das caixas */
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Define a cor de fundo escura e a cor padrão dos textos no corpo inteiro do site */
+body {
+  background-color: #121214;
+  color: #e1e1e6;
+}
+
+/* Barra superior do site (Header) */
+.topo {
+  background-color: #202024;
+  padding: 20px;
+  /* Flexbox: coloca o título na esquerda e os botões na direita */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #323238;
+}
+
+/* Container dos 3 botões do menu */
+.menu {
+  display: flex;
+  /* Espaço de 10px entre cada botão */
+  gap: 10px;
+}
+
+/* Estilo padrão dos botões do menu */
+.menu button {
+  background-color: #29292e;
+  color: #e1e1e6;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  /* Muda o ponteiro do mouse para a mãozinha de clique */
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Estilo aplicado APENAS no botão que recebeu a classe 'ativo' pelo React */
+.menu button.ativo {
+  background-color: #8257e5;
+  color: #ffffff;
+}
+
+/* Área central onde cada página (ENEM, Programação, Faculdade) aparece */
+.conteudo {
+  max-width: 900px;
+  /* '40px auto' dá margem em cima/baixo e centraliza a caixa na horizontal */
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* --- ESTILOS DA ÁREA ENEM --- */
+
+/* Formulário com o campo de texto, seletor de matéria e botão */
+.form-estudo {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* Estiliza o campo de digitar e a caixa de seleção juntos */
+.form-estudo input,
+.form-estudo select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #323238;
+  background-color: #202024;
+  color: #e1e1e6;
+}
+
+/* 'flex: 1' faz o campo de texto esticar e ocupar todo o espaço livre na linha */
+.form-estudo input {
+  flex: 1;
+}
+
+/* Botão verde de adicionar assunto */
+.form-estudo button {
+  padding: 10px 20px;
+  background-color: #00875f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Lista vertical de assuntos cadastrados */
+.lista-topicos {
+  /* Remove as bolinhas padrão de listas HTML */
+  list-style: none;
+  display: flex;
+  /* Coloca um item embaixo do outro */
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cada cartão individual da lista */
+.lista-topicos li {
+  background-color: #202024;
+  padding: 14px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #323238;
+}
+
+/* Etiqueta roxa com o nome da matéria (ex: Matemática, Redação) */
+.tag-materia {
+  background-color: #29292e;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #8257e5;
+  font-weight: bold;
+}
+
+/* Quando o item ganha a classe 'item-concluido', risca o texto e deixa cinza */
+.item-concluido .titulo-topico {
+  text-decoration: line-through;
+  color: #7c7c8a;
+}
+/* --- BOTÃO REMOVER E AÇÕES --- */
+.acoes-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-remover {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* --- ESTILOS DA ÁREA PROGRAMAÇÃO --- */
+.form-dev {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.linha-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.linha-inputs input {
+  flex: 1;
+}
+
+.form-dev input,
+.form-dev select,
+.form-dev textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #323238;
+  background-color: #202024;
+  color: #e1e1e6;
+}
+
+.form-dev button {
+  padding: 12px;
+  background-color: #8257e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lista-notas {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-nota {
+  background-color: #202024;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #323238;
+}
+
+.card-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-nota h3 {
+  margin-bottom: 10px;
+}
+
+/* Estilo da caixa escura que exibe trechos de código */
+.bloco-codigo {
+  background-color: #121214;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 13px;
+  color: #04d361;
+  /* Faz linhas muito longas quebrarem para não vazar do card */
+  white-space: pre-wrap;
+}
+/* --- ESTILOS DA ÁREA FACULDADE --- */
+.painel-media {
+  background-color: #202024;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #8257e5;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.painel-media input {
+  width: 100px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #323238;
+  background-color: #121214;
+  color: #04d361;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.status-aprovado {
+  margin-top: 8px;
+  color: #04d361;
+  font-weight: bold;
+}
+
+.status-faltando {
+  margin-top: 8px;
+  color: #fba94c;
+  font-weight: bold;
+}
+/* --- ESTILOS DO CRONÔMETRO POMODORO --- */
+.caixa-pomodoro {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #121214;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #323238;
+}
+
+.relogio {
+  font-family: monospace;
+  font-size: 18px;
+  color: #04d361;
+}
+
+.caixa-pomodoro button {
+  background-color: #00875f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.caixa-pomodoro button.btn-reset {
+  background-color: #29292e;
+  color: #e1e1e6;
+}
